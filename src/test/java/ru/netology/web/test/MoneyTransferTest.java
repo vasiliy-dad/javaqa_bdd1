@@ -37,8 +37,6 @@ public class MoneyTransferTest {
         dashboardPage.reloadDashboardPage();
         dashboardPage.checkCardBalance(firstCardInfo, expectedBalanceFirstCard);
         dashboardPage.checkCardBalance(secondCardInfo, expectedBalanceSecondCard);
-//        Assertions.assertAll(() -> dashboardPage.checkCardBalance(firstCardInfo, expectedBalanceFirstCard),
-//                () -> dashboardPage.checkCardBalance(secondCardInfo, expectedBalanceSecondCard));
     }
 
     @Test
@@ -49,17 +47,4 @@ public class MoneyTransferTest {
         loginPage.login(invalidAuthInfo);
         loginPage.checkErrorTextMessage("Ошибка! Неверно указан логин или пароль");
     }
-
-
-//    @Test
-//    void shouldGetErrorMessageAmountMoreBalance() {
-//        var amount = DataHelper.generateInvalidAmount(secondCardBalance);
-//        var transferPage = dashboardPage.selectCardToTransfer(firstCardInfo);
-//        transferPage.makeTransfer(String.valueOf(amount), secondCardInfo);
-//        transferPage.findErrorMessage("Выполнена попытка перевода суммы, превышающий остаток на карте списания");
-////        Assertions.assertAll(() -> transferPage.findErrorMessage("Выполнена попытка перевода суммы, превышающий остаток на карте списания"),
-////                () -> dashboardPage.reloadDashboardPage(),
-////                () -> dashboardPage.checkCardBalance(firstCardInfo, firstCardBalance),
-////                () -> dashboardPage.checkCardBalance(secondCardInfo, secondCardBalance));
-//    }
 }
